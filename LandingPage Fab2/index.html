@@ -11,6 +11,17 @@
 <body>
 
     <div id="hero-placeholder"></div>
+    <div id="frase-impacto-placeholder"></div>
+    <div id="ola-placeholder"></div>
+    <div id="quem-e-placeholder"></div>
+    <div id="escritora-placeholder"></div>
+    <div id="seguidores-placeholder"></div>
+    <div id="instagram-placeholder"></div>
+    <div id="tiktok-placeholder"></div>
+    <div id="facebook-placeholder"></div>
+    <div id="linkedin-placeholder"></div>
+    <div id="conversa-placeholder"></div>
+    <div id="palestrante-placeholder"></div>
 
     <script>
         fetch('sections/hero.html')
@@ -24,6 +35,131 @@
                 document.getElementById('hero-placeholder').innerHTML = data;
             })
             .catch(err => console.error("Erro no fetch:", err));
+        
+        fetch('sections/frase-impacto.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar frase-impacto.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('frase-impacto-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+            
+        fetch('sections/ola.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar ola.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('ola-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+
+        fetch('sections/quem-e.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar quem-e.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('quem-e-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+            
+        fetch('sections/escritora.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar escritora.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('escritora-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+         fetch('sections/seguidores.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar seguidores.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('seguidores-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));   
+        fetch('sections/instagram.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar instagram.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('instagram-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));   
+        fetch('sections/tiktok.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar tiktok.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('tiktok-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));   
+        fetch('sections/facebook.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar facebook.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('facebook-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));     
+        fetch('sections/linkedin.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar linkedin.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('linkedin-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+        fetch('sections/conversa.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar conversa.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('conversa-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+        fetch('sections/palestrante.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar palestrante.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('palestrante-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));    
     </script>
 
 </body>
