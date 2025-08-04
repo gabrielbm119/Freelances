@@ -312,6 +312,7 @@ body {
     font-size: var(--font-md);
     background-color: transparent;
     color: var(--color-white);
+    text-align: center;
 }
 
 .ola__block {
@@ -1608,7 +1609,7 @@ body {
     .investimento__container2--title {
         font-family: var(--font-title);
         font-size: var(--font-xl);
-        background: linear-gradient(90deg, #924710 0%, #C68426 100%);
+        background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-bottom: var(--spacing-md);
@@ -1641,3 +1642,37 @@ body {
     }
 }
 
+.whatsapp-fixo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #5fc86b80;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #000000;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #00000055;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.whatsapp-fixo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00000077;
+}
+
+.whatsapp-fixo a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    gap: 0.5rem;
+}
+
+.whatsapp-fixo img {
+    width: 20px;
+    height: 20px;
+}

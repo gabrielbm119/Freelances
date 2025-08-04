@@ -10,6 +10,13 @@
 
 <body>
 
+    <div class="whatsapp-fixo">
+        <a href="https://api.whatsapp.com/send/?phone=48988127282&text&type=phone_number&app_absent=0" target="_blank">
+            <img src="assets/images/whatsapp.png" alt="WhatsApp" />
+            <span>Contato</span>
+        </a>
+    </div>
+
     <div id="hero-placeholder"></div>
     <div id="frase-impacto-placeholder"></div>
     <div id="ola-placeholder"></div>
@@ -40,7 +47,7 @@
                 document.getElementById('hero-placeholder').innerHTML = data;
             })
             .catch(err => console.error("Erro no fetch:", err));
-        
+
         fetch('sections/frase-impacto.html')
             .then(response => {
                 if (!response.ok) {
@@ -52,7 +59,7 @@
                 document.getElementById('frase-impacto-placeholder').innerHTML = data;
             })
             .catch(err => console.error("Erro no fetch:", err));
-            
+
         fetch('sections/ola.html')
             .then(response => {
                 if (!response.ok) {
@@ -76,7 +83,7 @@
                 document.getElementById('quem-e-placeholder').innerHTML = data;
             })
             .catch(err => console.error("Erro no fetch:", err));
-            
+
         fetch('sections/escritora.html')
             .then(response => {
                 if (!response.ok) {
@@ -88,7 +95,7 @@
                 document.getElementById('escritora-placeholder').innerHTML = data;
             })
             .catch(err => console.error("Erro no fetch:", err));
-         fetch('sections/seguidores.html')
+        fetch('sections/seguidores.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Erro ao carregar seguidores.html");
@@ -98,7 +105,7 @@
             .then(data => {
                 document.getElementById('seguidores-placeholder').innerHTML = data;
             })
-            .catch(err => console.error("Erro no fetch:", err));   
+            .catch(err => console.error("Erro no fetch:", err));
         fetch('sections/instagram.html')
             .then(response => {
                 if (!response.ok) {
@@ -109,7 +116,7 @@
             .then(data => {
                 document.getElementById('instagram-placeholder').innerHTML = data;
             })
-            .catch(err => console.error("Erro no fetch:", err));   
+            .catch(err => console.error("Erro no fetch:", err));
         fetch('sections/tiktok.html')
             .then(response => {
                 if (!response.ok) {
@@ -120,7 +127,7 @@
             .then(data => {
                 document.getElementById('tiktok-placeholder').innerHTML = data;
             })
-            .catch(err => console.error("Erro no fetch:", err));   
+            .catch(err => console.error("Erro no fetch:", err));
         fetch('sections/facebook.html')
             .then(response => {
                 if (!response.ok) {
@@ -131,7 +138,7 @@
             .then(data => {
                 document.getElementById('facebook-placeholder').innerHTML = data;
             })
-            .catch(err => console.error("Erro no fetch:", err));     
+            .catch(err => console.error("Erro no fetch:", err));
         fetch('sections/linkedin.html')
             .then(response => {
                 if (!response.ok) {
