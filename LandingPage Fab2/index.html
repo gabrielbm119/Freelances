@@ -4,1847 +4,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <link rel="stylesheet" href="/css/style.css">
     <title>Landing Page Fab 2</title>
-
-    <style>
-        /* RESET SIMPLES */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 62.5%;
-            /* 1rem = 10px */
-
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: #0d0d0d;
-            color: #fff;
-            line-height: 1.2;
-            font-size: 1.6rem;
-        }
-
-        /* VARIÁVEIS */
-        @font-face {
-            font-family: 'MADE Sunflower';
-            src: url('../assets/fonts/MADESunflower.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Kross Neue Grotesk';
-            src: url('../assets/fonts/KrossNeueGrotesk-Light.woff2') format('woff2');
-            font-weight: 300;
-            font-style: normal;
-        }
-
-        :root {
-            --color-gold: #f4b13d;
-            --color-white: #ffffff;
-            --color-dark: #0d0d0d;
-
-            --font-title: 'MADE Sunflower', serif;
-            --font-body: 'Kross Neue Grotesk', sans-serif;
-
-            --font-xs: 1.2rem;
-            --font-sm: 1.4rem;
-            --font-md: 1.6rem;
-            --font-lg: 3.6rem;
-            --font-xl: 4.4rem;
-            --font-title-size: 4.8rem;
-
-            --spacing-xs: 0.8rem;
-            --spacing-sm: 1.6rem;
-            --spacing-md: 3.2rem;
-            --spacing-lg: 6.4rem;
-            --spacing-xl: 9.6rem;
-        }
-
-        /* === HERO SECTION === */
-        .hero {
-            background-color: var(--color-dark);
-            background-image: url('../assets/images/hero-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
-            text-align: center;
-            min-height: 100vh;
-            /* COPILOT */
-            max-width: 100vw;
-            /* COPILOT */
-            display: flex;
-            /* COPILOT */
-            flex-direction: column;
-            /* COPILOT */
-            justify-content: flex-end;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .hero__container {
-            max-width: 1200px;
-            width: 100%;
-            /* COPILOT */
-            height: 100%;
-            /* COPILOT */
-            margin: 0 auto;
-        }
-
-        .hero__content {
-            text-align: center;
-            word-break: break-word;
-            /* COPILOT */
-        }
-
-        .hero__title {
-            margin-bottom: var(--spacing-sm);
-            font-family: var(--font-title);
-            font-size: var(--font-title-size, 5.5rem);
-            line-height: 1.1;
-            text-align: inherit;
-        }
-
-        .hero__title--first {
-            display: block;
-            color: var(--color-white);
-        }
-
-        .hero__title--last {
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        .hero__subtitle {
-            display: inline-block;
-            padding: var(--spacing-xs) var(--spacing-md);
-            border: 1px solid var(--color-gold);
-            border-radius: 999px;
-            font-size: var(--font-md);
-            background-color: transparent;
-            color: var(--color-white);
-        }
-
-        .hero__tags {
-            display: none;
-        }
-
-        @media (min-width: 768px) {
-            .hero {
-                background-image: url('../assets/images/hero-image-desktop.svg');
-                background-position: right center;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .hero__content {
-                text-align: left;
-                max-width: 50%;
-            }
-
-            .hero__tags {
-                display: block;
-            }
-
-
-            .hero__tags-list {
-                list-style: none;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 0.8rem;
-                margin-top: var(--spacing-md);
-                padding: 0;
-            }
-
-            .hero__tag {
-                display: inline-block;
-                font-size: var(--font-sm);
-                background-color: rgba(255, 255, 255, 0.05);
-                padding: 0.6rem 1.2rem;
-                margin-right: var(--spacing-sm);
-                border-radius: 999px;
-                color: var(--color-white);
-            }
-        }
-
-        /* === FRASE IMPACTO SECTION === */
-        .frase-impacto {
-            background-image: url('../assets/images/frase-impacto-image-mobile.svg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 100vw;
-            aspect-ratio: 16 / 9;
-            display: flex;
-            align-items: center;
-            padding-left: var(--spacing-sm);
-            color: var(--color-white);
-            position: relative;
-        }
-
-        .frase-impacto::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .frase-impacto__container {
-            max-width: 60%;
-        }
-
-        .frase-impacto__text {
-            font-family: var(--font-body);
-            font-size: var(--font-md);
-            line-height: 1.6;
-        }
-
-        .highlight-gold {
-            color: var(--color-gold);
-        }
-
-        .highlight-white {
-            font-weight: 700;
-            color: var(--color-white);
-        }
-
-        /* === DESKTOP === */
-        @media (min-width: 768px) {
-            .frase-impacto {
-                background-image: url('../assets/images/frase-impacto-image-desktop.svg');
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: var(--spacing-lg);
-            }
-
-            .frase-impacto__container {
-                max-width: 50%;
-            }
-
-            .frase-impacto__text {
-                font-size: var(--font-lg);
-            }
-        }
-
-        /* === OLA SECTION === */
-        .ola {
-            background-image: url('../assets/images/ola-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-
-            width: 100vw;
-            aspect-ratio: 1.72 / 1;
-
-            color: var(--color-white);
-            padding: var(--spacing-lg) var(--spacing-md);
-            position: relative;
-        }
-
-        .ola::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .ola__container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--spacing-md);
-        }
-
-        .ola__header {
-            max-width: 700px;
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-sm);
-        }
-
-        .ola__content {
-            max-width: 700px;
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .ola__title {
-            font-family: var(--font-title);
-            font-size: var(--font-lg);
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-
-        .ola__subtitle {
-            display: inline-block;
-            padding: var(--spacing-xs) var(--spacing-md);
-            border: 1px solid var(--color-gold);
-            border-radius: 999px;
-            font-size: var(--font-md);
-            background-color: transparent;
-            color: var(--color-white);
-            text-align: center;
-        }
-
-        .ola__block {
-            position: relative;
-            background: black;
-            padding: var(--spacing-sm);
-            border-radius: 0.4rem;
-            font-size: var(--font-sm);
-            line-height: 1.6;
-
-            background-image:
-                linear-gradient(black, black),
-                linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-            border: 2px solid transparent;
-        }
-
-        @media (min-width: 768px) {
-            .ola {
-                background-image: url('../assets/images/ola-image-desktop.svg');
-                background-position: right center;
-                display: flex;
-                align-items: center;
-                min-height: 100vh;
-                padding-top: var(--spacing-md);
-                padding-bottom: var(--spacing-xl);
-            }
-
-            .ola__content {
-                max-width: 60%;
-            }
-        }
-
-        /* === QUEM-E SECTION === */
-        .quem-e__container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-
-        .quem-e--1,
-        .quem-e--2,
-        .quem-e--3 {
-            position: relative;
-        }
-
-        .quem-e--1::after,
-        .quem-e--2::after,
-        .quem-e--3::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .quem-e--1 {
-            background-image: url('../assets/images/queme1-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            padding: var(--spacing-md);
-            gap: var(--spacing-sm);
-        }
-
-        .quem-e--1 h2 {
-            font-family: var(--font-title);
-            font-size: var(--font-lg);
-            line-height: 1.2;
-        }
-
-        .quem-e--1 p {
-            background-color: #00000081;
-            padding: var(--spacing-sm);
-        }
-
-        .quem-e--1__container--img {
-            display: none;
-        }
-
-        .quem-e--2 {
-            background-image: url('../assets/images/queme2-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: var(--spacing-sm);
-        }
-
-        .quem-e--2 img {
-            width: 20%;
-            height: auto;
-            align-self: flex-end;
-        }
-
-        .quem-e--2 p {
-            padding: var(--spacing-md) var(--spacing-sm);
-        }
-
-        @media (max-width: 480px) {
-            .quem-e--2 {
-                flex-direction: column-reverse;
-                gap: none;
-            }
-
-            .quem-e--2 p {
-                padding: var(--spacing-md) var(--spacing-md) 0;
-            }
-
-            .quem-e--2 img {
-                width: 40%;
-                align-self: flex-start;
-            }
-        }
-
-        .quem-e--2__content {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .quem-e--2__content--desktop {
-            display: none;
-        }
-
-        .quem-e--3 {
-            background-image: url('../assets/images/queme3-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--spacing-md);
-            gap: var(--spacing-sm);
-        }
-
-        .quem-e--3__content--1 {
-            background-color: #00000081;
-            padding: var(--spacing-sm);
-        }
-
-        .quem-e--3__content--2 {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: var(--spacing-sm);
-        }
-
-        .quem-e--3__content--2 img {
-            width: 40%;
-            height: auto;
-        }
-
-        .quem-e--3__content--2 p {
-            background-color: #00000081;
-            padding: var(--spacing-sm);
-        }
-
-        @media (min-width: 768px) {
-            .quem-e--1 {
-                background-image: url('../assets/images/queme1-image-desktop.png');
-                background-position: right center;
-                padding: 0;
-
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-end;
-                width: 100%;
-                height: 100vh;
-            }
-
-            .quem-e--1__container--content {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                max-width: 55%;
-                height: 100%;
-            }
-
-            .quem-e--1__content {
-                margin: var(--spacing-md) 0 var(--spacing-md) var(--spacing-md);
-            }
-
-            .quem-e--1__container--img {
-                display: block;
-                max-width: 40%;
-                max-height: 100%;
-            }
-
-            .quem-e--1__container--img img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            .quem-e--2__content {
-                align-items: center;
-                gap: var(--spacing-sm);
-                padding: var(--spacing-sm) 0 var(--spacing-md);
-            }
-
-            .quem-e--2__content--desktop {
-                display: flex;
-                gap: var(--spacing-sm);
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .quem-e--2 img {
-                width: 50%;
-            }
-
-            .quem-e--2 p {
-                background-color: #00000081;
-                padding: var(--spacing-sm);
-                max-width: 75%;
-            }
-
-            .quem-e--3,
-            .quem-e--3::after {
-                display: none;
-            }
-        }
-
-        /* === ESCRITORA SECTION === */
-        .escritora {
-            background-image: #000000;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-
-        .escritora::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .escritora__header {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .escritora__header img {
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 140%;
-            max-width: none;
-            height: auto;
-            display: block;
-            transition: width 0.3s ease;
-        }
-
-        .escritora__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
-            gap: var(--spacing-sm);
-        }
-
-        .escritora__block {
-            border: 1px solid var(--color-gold);
-            border-radius: 1.5rem;
-            padding: var(--spacing-sm);
-            width: 65vw;
-        }
-
-        .escritora__block--title {
-            font-family: var(--font-title);
-        }
-
-        .escritora__block--subtitle {
-            color: var(--color-gold);
-        }
-
-        .escritora__block--text {
-            font-size: var(--font-sm);
-            line-height: 1.6;
-        }
-
-        /* === SEGUIDORES SECTION === */
-        .seguidores {
-            background-image: url('../assets/images/seguidores-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-
-            width: 100vw;
-            aspect-ratio: 1.72 / 1;
-
-            position: relative;
-        }
-
-        .seguidores::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .seguidores__container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: center;
-            height: 100%;
-            padding-top: var(--spacing-lg);
-            padding-bottom: var(--spacing-lg);
-            padding-right: 20px;
-        }
-
-        .seguidores__content {
-            text-align: center;
-        }
-
-        .seguidores__title {
-            font-family: var(--font-title);
-            font-size: clamp(9rem, 30vw, 35rem);
-            line-height: 0.7;
-            color: var(--color-gold);
-        }
-
-        .seguidores__subtitle {
-            font-family: var(--font-title);
-            font-size: clamp(3rem, 5vw, 8rem);
-        }
-
-        /* === INSTAGRAM SECTION === */
-        .instagram {
-            background: #000000;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            padding: var(--spacing-md) var(--spacing-md);
-        }
-
-        .instagram::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .instagram__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
-            gap: var(--spacing-sm);
-            max-width: 100vw;
-        }
-
-        .instagram__title {
-            font-family: var(--font-title);
-            font-size: var(--font-xl);
-            line-height: 1.2;
-            text-align: center;
-        }
-
-        .instagram__profile {
-            color: var(--color-gold);
-        }
-
-        .instagram__seguidores--block {
-            position: relative;
-            background: black;
-            padding: var(--spacing-sm);
-            border-radius: 0.4rem;
-            font-size: var(--font-md);
-            color: var(--color-gold);
-            line-height: 1.2;
-
-            background-image:
-                linear-gradient(black, black),
-                linear-gradient(90deg, #0e0702 0%, #925F19 20%, #B77822 30%, #C68426 40%, #D8912B 45%, #C89552 50%, #D8912B 55%, #C68426 60%, #B77822 70%, #925F19 80%, #0e0702 100%);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-            border: 2px solid transparent;
-        }
-
-        .instagram__graph {
-            display: flex;
-            gap: var(--spacing-sm);
-        }
-
-        .instagram__graph--text h3 {
-            font-family: var(--font-title);
-            font-size: var(--font-lg);
-        }
-
-        .instagram__graph--text p {
-            color: var(--color-gold);
-            font-size: var(--font-sm);
-        }
-
-        .instagram__graph img {
-            width: 20vw;
-            height: auto;
-        }
-
-        .btn__clique-aqui {
-            border: 1px solid var(--color-gold);
-            padding: var(--spacing-sm) var(--spacing-md);
-            border-radius: 2rem;
-            background-image: linear-gradient(0deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            transition: trasform 0.2s ease;
-        }
-
-        .btn__clique-aqui--text {
-            color: var(--color-white);
-        }
-
-        .btn__clique-aqui:hover {
-            transform: scale(1.1);
-        }
-
-        .instagram__img-container img {
-            width: 80vw;
-            height: auto;
-        }
-
-        @media (min-width: 768px) {
-            .instagram {
-                flex-direction: row;
-            }
-
-            .instagram__img-container img {
-                height: auto;
-                width: 40vw;
-            }
-        }
-
-        /* === TIKTOK, FACEBOOK E LINKEDIN SECTION === */
-        .rede {
-            background: #000000;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            padding: var(--spacing-md) var(--spacing-md);
-            gap: var(--spacing-sm);
-        }
-
-        .rede::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .rede__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
-            gap: var(--spacing-sm);
-            width: 100%;
-            max-width: 100vw;
-        }
-
-        .rede__title {
-            font-family: var(--font-title);
-            font-size: var(--font-xl);
-            line-height: 1.2;
-            text-align: center;
-        }
-
-        .rede__profile {
-            color: var(--color-gold);
-        }
-
-        .rede__img-container img {
-            width: 80vw;
-            height: auto;
-        }
-
-        @media (min-width: 768px) {
-            .rede {
-                flex-direction: row;
-            }
-
-            .rede__img-container img {
-                height: auto;
-                width: 50vw;
-            }
-        }
-
-        /* === CONVERSA SECTION === */
-        .conversa {
-            background-image: url('../assets/images/conversa-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            color: var(--color-white);
-            position: relative;
-            padding: var(--spacing-md) var(--spacing-md);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 100vw;
-            max-height: 500px;
-        }
-
-        .conversa::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .conversa__container {
-            gap: var(--spacing-md);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .conversa__header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .conversa__title {
-            font-family: var(--font-title);
-            font-size: var(--font-xl);
-            line-height: 1.4;
-            text-align: center;
-        }
-
-        .conversa__title--block {
-            position: relative;
-            background: black;
-            padding: var(--spacing-sm);
-            border-radius: 0.4rem;
-            font-size: var(--font-md);
-            color: var(--color-gold);
-            line-height: 0.4;
-
-            background-image:
-                linear-gradient(black, black),
-                linear-gradient(90deg, #0e0702 0%, #925F19 20%, #B77822 30%, #C68426 40%, #D8912B 45%, #C89552 50%, #D8912B 55%, #C68426 60%, #B77822 70%, #925F19 80%, #0e0702 100%);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-            border: 2px solid transparent;
-        }
-
-        .conversa__title2 {
-            color: var(--color-gold);
-            font-size: 3rem;
-        }
-
-        .conversa__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 50vw;
-        }
-
-        .conversa__content h2 {
-            font-family: var(--font-title);
-            font-size: 2.4rem;
-            color: var(--color-gold);
-        }
-
-        .conversa__content p {
-            font-size: var(--font-sm);
-            text-align: center;
-        }
-
-        @media (min-width: 768px) {
-            .conversa {
-                background-image: url('../assets/images/conversa-image-desktop.svg');
-                background-position: right center;
-                padding: var(--spacing-lg);
-                min-height: 90vh;
-                align-items: flex-start;
-            }
-
-            .conversa__container {
-                max-width: 60%;
-            }
-
-            .conversa__content h2 {
-                font-size: var(--font-lg);
-            }
-        }
-
-        /* === PALESTRANTE SECTION === */
-        .palestrante {
-            background-image: url('../assets/images/palestrante-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-
-            aspect-ratio: 1 / 1.20;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-
-            color: var(--color-white);
-            position: relative;
-            padding: var(--spacing-md) var(--spacing-md);
-        }
-
-        .palestrante::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .palestrante__container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: var(--spacing-sm);
-            max-width: 100%;
-        }
-
-        .palestrante__title h2 {
-            font-family: var(--font-title);
-            font-size: clamp(4rem, 12vw, 15rem);
-            line-height: 0.8;
-            text-align: center;
-        }
-
-        .palestrante__title h3 {
-            font-family: var(--font-title);
-            font-size: clamp(3rem, 10vw, 9rem);
-            text-align: center;
-        }
-
-        .palestrante__container img {
-            display: none;
-            width: 70%;
-            height: auto;
-        }
-
-        @media (min-width: 768px) {
-            .palestrante {
-                background-image: url('../assets/images/palestrante-image-desktop.svg');
-                background-position: right center;
-                aspect-ratio: 1.85 / 1;
-                padding: var(--spacing-lg);
-            }
-
-            .palestrante__container {
-                align-items: flex-start;
-                max-width: 60%;
-            }
-
-            .palestrante__title h2 {
-                font-size: clamp(7rem, 8vw, 9rem);
-                text-align: left;
-            }
-
-            .palestrante__title h3 {
-                font-size: clamp(4rem, 5vw, 6rem);
-                text-align: left;
-            }
-
-            .palestrante__container img {
-                display: block;
-            }
-        }
-
-        /* === MENTORA SECTION === */
-        .mentora {
-            background-image: url('../assets/images/mentora-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: left center;
-            min-height: 100vh;
-            max-width: 100vw;
-
-            display: flex;
-            align-items: flex-end;
-            justify-content: right;
-            padding: var(--spacing-md);
-
-            position: relative;
-        }
-
-        .mentora::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .mentora__content {
-            background-image: linear-gradient(90deg, #0e0702b7 0%, #926019c7 20%, #b77922c7 30%, #c68326c5 40%, #d8902bc5 45%, #d8902bc5 55%, #c68326c5 60%, #b77922c7 70%, #926019c7 80%, #0e0702b7 100%);
-            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.8);
-            padding: var(--spacing-sm);
-            height: 50%;
-
-            border-radius: var(--spacing-md);
-            min-width: 60%;
-            max-width: 90%;
-        }
-
-        .mentora__content h2 {
-            font-family: var(--font-title);
-            font-size: var(--font-xl);
-            text-align: center;
-        }
-
-        .mentora__content h3 {
-            font-family: var(--font-title);
-            font-size: 3rem;
-            text-align: center;
-        }
-
-        .mentora__content .btn__clique-aqui {
-            place-self: center;
-            width: 80%;
-            text-align: center;
-        }
-
-        @media (min-width: 768px) {
-            .mentora {
-                background-image: url('../assets/images/mentora-image-desktop.svg');
-                align-items: flex-start;
-            }
-
-            .mentora__content {
-                min-width: 50%;
-            }
-
-            .mentora__content h2 {
-                font-size: 7rem;
-            }
-
-            .mentora__content h3 {
-                font-size: 4rem;
-            }
-
-            .mentora__content .btn__clique-aqui {
-                width: 50%;
-            }
-        }
-
-        /* === NETWORKING SECTION === */
-        .networking {
-            background-color: #000000;
-            padding: var(--spacing-md) 0;
-            position: relative;
-        }
-
-        .networking::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .networking__container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: var(--spacing-md);
-        }
-
-        .networking__title {
-            font-family: var(--font-title);
-            font-size: clamp(3rem, 6vw, 5rem);
-            text-align: center;
-        }
-
-        .networking__grid {
-            display: grid;
-            grid-template-columns: repeat(2, 150px);
-            grid-template-rows: repeat(6, 300px);
-            align-content: center;
-            justify-content: center;
-            gap: 20px 15px;
-        }
-
-        .networking__grid--child {
-            background-color: #5a5858;
-            border: 1px solid var(--color-gold);
-            border-radius: var(--spacing-md);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .networking__grid--child img {
-            max-width: auto;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-        }
-
-        .networking__container p {
-            color: var(--color-gold);
-        }
-
-        @media (min-width: 600px) {
-            .networking__grid {
-                grid-template-columns: repeat(3, 150px);
-                grid-template-rows: repeat(4, 300px);
-            }
-        }
-
-        @media (min-width: 768px) {
-            .networking__grid {
-                grid-template-columns: repeat(4, 150px);
-                grid-template-rows: repeat(3, 300px);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .networking__grid {
-                grid-template-columns: repeat(6, 150px);
-                grid-template-rows: repeat(2, 300px);
-            }
-        }
-
-        /* === PREMIOS SECTION === */
-        .premios {
-            background-color: #000000;
-            padding: var(--spacing-md) 0;
-            position: relative;
-        }
-
-        .premios::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .premios__container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: var(--spacing-md);
-        }
-
-        .premios__title {
-            font-family: var(--font-title);
-            font-size: clamp(3rem, 6vw, 5rem);
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-
-        .premios__grid {
-            display: grid;
-            grid-template-columns: repeat(2, 150px);
-            grid-template-rows: repeat(6, 150px);
-            grid-column-gap: 20px;
-            grid-row-gap: 15px;
-        }
-
-        .premios__grid--child {
-            background-color: #5a5858;
-            border: 1px solid var(--color-gold);
-            border-radius: var(--spacing-md);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .premios__grid--child img {
-            max-width: auto;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-        }
-
-        #premios1 {
-            grid-area: 1 / 1 / 3 / 2;
-        }
-
-        #premios2 {
-            grid-area: 1 / 2 / 3 / 3;
-        }
-
-        #premios3 {
-            grid-area: 3 / 1 / 5 / 2;
-        }
-
-        #premios4 {
-            grid-area: 3 / 2 / 5 / 3;
-        }
-
-        #premios5 {
-            grid-area: 5 / 1 / 6 / 3;
-        }
-
-        #premios6 {
-            grid-area: 6 / 1 / 7 / 3;
-        }
-
-        .premios__container p {
-            color: var(--color-gold);
-        }
-
-        @media (min-width: 600px) {
-            .premios__grid {
-                grid-template-columns: repeat(3, 150px);
-                grid-template-rows: repeat(4, 150px);
-            }
-
-            #premios3 {
-                grid-area: 1 / 3 / 3 / 4;
-            }
-
-            #premios4 {
-                grid-area: 3 / 1 / 5 / 2;
-            }
-
-            #premios5 {
-                grid-area: 3 / 2 / 4 / 4;
-            }
-
-            #premios6 {
-                grid-area: 4 / 2 / 5 / 4;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .premios__grid {
-                grid-template-columns: repeat(6, 150px);
-                grid-template-rows: repeat(2, 150px);
-            }
-
-            #premios3 {
-                grid-area: 1 / 3 / 3 / 4;
-            }
-
-            #premios4 {
-                grid-area: 1 / 4 / 3 / 5;
-            }
-
-            #premios5 {
-                grid-area: 1 / 5 / 2 / 7;
-            }
-
-            #premios6 {
-                grid-area: 2 / 5 / 3 / 7;
-            }
-        }
-
-        /* === MAIS INFO SECTION === */
-        .mais-info {
-            background-image: url('../assets/images/mais-info-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: right center;
-            min-height: 100vh;
-            max-width: 100vw;
-
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            padding: var(--spacing-sm);
-
-            position: relative;
-        }
-
-        .mais-info::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .mais-info__container {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .mais-info__container img {
-            width: 60%;
-        }
-
-        .mais-info__content {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .mais-info__title {
-            font-family: var(--font-title);
-            color: var(--color-gold);
-            font-size: clamp(3rem, 6vw, 5rem);
-            ;
-        }
-
-        @media (min-width: 340px) {
-            .mais-info {
-                padding: var(--font-md);
-            }
-
-            .mais-info__list {
-                list-style: none;
-                padding-left: 0;
-            }
-
-            .mais-info__list li {
-                position: relative;
-                padding-left: 3rem;
-                margin-bottom: 1rem;
-            }
-
-            .mais-info__list li::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 50%;
-                /* alinha pela metade */
-                transform: translateY(-50%);
-                /* move para cima metade da altura do ícone */
-                width: 2rem;
-                height: 2rem;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-
-            /* Ícones específicos para cada item */
-            #mais-info1::before {
-                background-image: url('../assets/images/mais-info-icon1.svg');
-            }
-
-            #mais-info2::before {
-                background-image: url('../assets/images/mais-info-icon2.svg');
-            }
-
-            #mais-info3::before {
-                background-image: url('../assets/images/mais-info-icon3.svg');
-            }
-
-            #mais-info4::before {
-                background-image: url('../assets/images/mais-info-icon4.svg');
-            }
-
-            #mais-info5::before {
-                background-image: url('../assets/images/mais-info-icon5.svg');
-            }
-
-            #mais-info6::before {
-                background-image: url('../assets/images/mais-info-icon6.svg');
-            }
-        }
-
-        @media (min-width: 550px) {
-            .mais-info {
-                padding: var(--font-lg);
-            }
-
-            .mais-info__list li {
-                padding-left: 4rem;
-                margin-bottom: 2rem;
-            }
-
-            .mais-info__list li::before {
-                width: 3rem;
-                height: 3rem;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .mais-info {
-                background-image: url('../assets/images/mais-info-image-desktop.svg');
-                padding: var(--spacing-xl);
-            }
-
-            .mais-info__container {
-                background-color: #0000009a;
-                padding: var(--spacing-sm);
-                border-radius: var(--spacing-sm);
-                width: 63%;
-            }
-
-            .mais-info__container img {
-                width: 40%;
-            }
-        }
-
-        /* === INVESTIMENTO SECTION === */
-        /* ===== CONTAINER 1 (Mobile Only) ===== */
-        .investimento__container1 {
-            background-image: url('../assets/images/investimento-image-mobile.svg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: right top;
-
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            padding: var(--spacing-lg) var(--spacing-md);
-            position: relative;
-        }
-
-        .investimento__container1::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        .investimento__container1--title {
-            font-family: var(--font-title);
-            font-size: clamp(3rem, 6vw, 5rem);
-            line-height: 1;
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .investimento__container1--observacao {
-            font-size: var(--font-xs);
-            max-width: 15ch;
-            margin-top: var(--spacing-sm);
-        }
-
-        /* ===== CONTAINER 2 ===== */
-        .investimento__container2--title,
-        .investimento__container2--observacao {
-            display: none;
-        }
-
-        .investimento__container2 {
-            background-color: #201f1f;
-            padding: var(--spacing-md);
-            position: relative;
-        }
-
-        .investimento__container2::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 10px;
-            /* altura da borda */
-            background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-            z-index: 10;
-        }
-
-        /* ===== TABLE STRUCTURE ===== */
-        .investimento__table-wrapper {
-            overflow-x: auto;
-            max-width: 100%;
-        }
-
-        .investimento__table {
-            display: flex;
-            background-color: #000000ad;
-            flex-direction: row;
-            gap: var(--spacing-lg);
-            padding: var(--spacing-sm);
-            border: 1px solid var(--color-gold);
-            border-radius: 0.4rem;
-            min-width: 610px;
-            /* Largura mínima para forçar scroll */
-        }
-
-        .investimento__arraste {
-            margin-top: 0.8rem;
-            padding: 0.4rem;
-            background-color: #131212ab;
-            color: #b3afaf;
-            text-align: center;
-            border-radius: 4rem;
-            max-width: 300px;
-        }
-
-        .investimento__valores {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-
-        .investimento__box-inner {
-            background-color: black;
-            border: 1px solid var(--color-gold);
-            border-radius: 0.4rem;
-            padding: var(--spacing-sm);
-        }
-
-        .investimento__box-title {
-            font-family: var(--font-title);
-            color: var(--color-gold);
-            font-weight: bold;
-            margin-bottom: var(--spacing-sm);
-            font-size: clamp(2rem, 5vw, 4rem);
-        }
-
-        .investimento__preco {
-            display: block;
-            background-color: white;
-            color: black;
-            font-weight: bold;
-            text-align: center;
-            padding: 0.5rem;
-            margin-top: var(--spacing-sm);
-        }
-
-        .investimento__pacotes-title {
-            font-family: var(--font-title);
-            color: var(--color-gold);
-            font-weight: bold;
-            margin-bottom: var(--spacing-sm);
-            font-size: clamp(2rem, 5vw, 4rem);
-        }
-
-        .investimento__pacotes-list {
-            list-style: none;
-            padding: 0;
-            font-size: var(--font-sm);
-            line-height: 1.6;
-        }
-
-        /* ===== DESKTOP (768px+) ===== */
-        @media (min-width: 768px) {
-
-            .investimento__container1,
-            .investimento__container1::after {
-                display: none;
-            }
-
-            .investimento__container2--title,
-            .investimento__container2--observacao {
-                display: block;
-            }
-
-            .investimento__container2 {
-                background-image: url('../assets/images/investimento-image-mobile.svg');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: right top;
-            }
-
-            .investimento__container2--title {
-                font-family: var(--font-title);
-                font-size: var(--font-xl);
-                background: linear-gradient(90deg, #924710 0%, #925F19 25%, #B77822 38%, #C68426 64%, #D8912B 80%, #C89552 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                margin-bottom: var(--spacing-md);
-            }
-
-            .investimento__container2--observacao {
-                font-size: var(--font-xs);
-                margin-top: var(--spacing-md);
-            }
-
-            .investimento__table-wrapper {
-                width: 50%;
-            }
-
-            .investimento__table {
-                flex-direction: row;
-                justify-content: space-between;
-                gap: var(--spacing-lg);
-            }
-
-            .investimento__valores,
-            .investimento__pacotes {
-                width: 48%;
-            }
-        }
-
-        @media (min-width: 1220px) {
-            .investimento__arraste {
-                display: none;
-            }
-        }
-
-        .whatsapp-fixo {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #5fc86b80;
-            color: #fff;
-            padding: 0.6rem 1.2rem;
-            border: 1px solid #000000;
-            border-radius: 1rem;
-            box-shadow: 0 0 10px #00000055;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .whatsapp-fixo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px #00000077;
-        }
-
-        .whatsapp-fixo a {
-            display: flex;
-            align-items: center;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            gap: 0.5rem;
-        }
-
-        .whatsapp-fixo img {
-            width: 20px;
-            height: 20px;
-        }
-    </style>
-
 </head>
 
 <body>
-
-    <div class="whatsapp-fixo">
-        <a href="https://api.whatsapp.com/send/?phone=48988127282&text&type=phone_number&app_absent=0" target="_blank">
-            <img src="assets/images/whatsapp.png" alt="WhatsApp" />
-            <span>Contato</span>
-        </a>
-    </div>
-
-    <header class="hero">
-        <div class="hero__container">
-            <div class="hero__content">
-                <h1 class="hero__title">
-                    <span class="hero__title--first">Fabrícia</span>
-                    <span class="hero__title--last">Bitencourt</span>
-                </h1>
-
-                <p class="hero__subtitle">Ninguém vence no improviso.</p>
-
-                <nav class="hero__tags" aria-label="Áreas de atuação">
-                    <ul class="hero__tags-list">
-                        <li class="hero__tag">Mentora</li>
-                        <li class="hero__tag">Empreendedora</li>
-                        <li class="hero__tag">Escritora</li>
-                        <li class="hero__tag">Coach Internacional</li>
-                        <li class="hero__tag">Terapeuta Sistêmica</li>
-                    </ul>
-                </nav>
-            </div>
+    <div class="lp-fab2 lp-fab2-body">
+        <div class="whatsapp-fixo">
+            <a href="https://api.whatsapp.com/send/?phone=48988127282&text&type=phone_number&app_absent=0"
+                target="_blank">
+                <img src="assets/images/whatsapp.png" alt="WhatsApp" />
+                <span>Contato</span>
+            </a>
         </div>
-    </header>
 
-    <section class="frase-impacto" aria-label="Frase de impacto">
-        <div class="frase-impacto__container">
-            <p class="frase-impacto__text">
-                Quando confiança, propósito
-                e estratégia <span class="highlight-gold">caminham</span>
-                <span class="highlight-gold">juntas</span>,
-                <strong class="highlight-white"><i>os resultados são inevitáveis.</i></strong>
-            </p>
-        </div>
-    </section>
+        <header class="hero">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        <span class="hero__title--first">Fabrícia</span>
+                        <span class="hero__title--last">Bitencourt</span>
+                    </h1>
 
-    <section class="ola">
-        <div class="ola__container">
-            <div class="ola__header">
-                <h2 class="ola__title">Olá, Extraordinárias</h2>
-                <p class="ola__subtitle">É um prazer ter você aqui.</p>
+                    <p class="hero__subtitle">Ninguém vence no improviso.</p>
+
+                    <nav class="hero__tags" aria-label="Áreas de atuação">
+                        <ul class="hero__tags-list">
+                            <li class="hero__tag">Mentora</li>
+                            <li class="hero__tag">Empreendedora</li>
+                            <li class="hero__tag">Escritora</li>
+                            <li class="hero__tag">Coach Internacional</li>
+                            <li class="hero__tag">Terapeuta Sistêmica</li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="ola__content">
-                <article class="ola__block">
-                    <p>
-                        Estamos começando uma parceria que valoriza o que realmente importa:
-                        <i class="highlight-gold">respeito, seriedade e comprometimento com resultados
-                            reais.</i>
-                    </p>
-                    <p>
-                        Acreditamos na força de marcas autênticas e em conexões que fazem sentido, no Brasil, nos
-                        Estados
-                        Unidos, em Portugal e na Espanha.
-                    </p>
-                </article>
+        </header>
 
-                <article class="ola__block">
-                    <p>
-                        Com a experiência da Fabrícia Bitencourt e a sua trajetória única, temos certeza de que podemos
-                        crescer juntas, de forma sólida, estratégica e com
-                        propósito.
-                    </p>
-                    <p>
-                        <strong class="highlight-gold">Aqui, cada movimento é pensado com responsabilidade, escuta ativa
-                            e
-                            intenção verdadeira.</strong>
-                    </p>
-                </article>
+        <section class="frase-impacto" aria-label="Frase de impacto">
+            <div class="frase-impacto__container">
+                <p class="frase-impacto__text">
+                    Quando confiança, propósito
+                    e estratégia <span class="highlight-gold">caminham</span>
+                    <span class="highlight-gold">juntas</span>,
+                    <strong class="highlight-white"><i>os resultados são inevitáveis.</i></strong>
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="quem-e">
-        <section class="quem-e__container">
-            <section class="quem-e--1">
-                <div class="quem-e--1__container--content">
-                    <div class="quem-e--1__content">
-                        <h2>Quem é Fabrícia Bitencourt?</h2>
+        <section class="ola">
+            <div class="ola__container">
+                <div class="ola__header">
+                    <h2 class="ola__title">Olá, Extraordinárias</h2>
+                    <p class="ola__subtitle">É um prazer ter você aqui.</p>
+                </div>
+                <div class="ola__content">
+                    <article class="ola__block">
                         <p>
-                            Fabrícia Mendes Bitencourt Schmitz é casada com Vitor Schmitz, tem dois filhos e reside
-                            atualmente em
-                            sua
-                            cidade natal, Tubarão - SC. É mestre em Terapia Sistêmica, graduada em Serviço Social e
-                            habilitada para
-                            o exercício da Terapia Ayurvédica, Psicologia Transpessoal, comunicação e Psicoterapias -
-                            Regressão,
-                            Hipnoterapia -, em Medicinas Naturais Alternativas - Naturopatia, Homeopatia -, Analista de
-                            perfil
-                            comportamental e Coaching Integral Sistêmica Internacional.
+                            Estamos começando uma parceria que valoriza o que realmente importa:
+                            <i class="highlight-gold">respeito, seriedade e comprometimento com resultados
+                                reais.</i>
                         </p>
-                        <p class="highlight-gold">
-                            Atua como palestrante Internacional em Inteligência Emocional, Empreendedorismo e
-                            espiritualidade, como
-                            Terapeuta Sistêmica, direciona trabalhos com grupos de mulheres vítimas de violação por
-                            abusos
-                            sexuais,
-                            agressões físicas e/ou psicológicas.
+                        <p>
+                            Acreditamos na força de marcas autênticas e em conexões que fazem sentido, no Brasil, nos
+                            Estados
+                            Unidos, em Portugal e na Espanha.
                         </p>
+                    </article>
+
+                    <article class="ola__block">
+                        <p>
+                            Com a experiência da Fabrícia Bitencourt e a sua trajetória única, temos certeza de que
+                            podemos
+                            crescer juntas, de forma sólida, estratégica e com
+                            propósito.
+                        </p>
+                        <p>
+                            <strong class="highlight-gold">Aqui, cada movimento é pensado com responsabilidade, escuta
+                                ativa
+                                e
+                                intenção verdadeira.</strong>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="quem-e">
+            <section class="quem-e__container">
+                <section class="quem-e--1">
+                    <div class="quem-e--1__container--content">
+                        <div class="quem-e--1__content">
+                            <h2>Quem é Fabrícia Bitencourt?</h2>
+                            <p>
+                                Fabrícia Mendes Bitencourt Schmitz é casada com Vitor Schmitz, tem dois filhos e reside
+                                atualmente em
+                                sua
+                                cidade natal, Tubarão - SC. É mestre em Terapia Sistêmica, graduada em Serviço Social e
+                                habilitada para
+                                o exercício da Terapia Ayurvédica, Psicologia Transpessoal, comunicação e Psicoterapias
+                                -
+                                Regressão,
+                                Hipnoterapia -, em Medicinas Naturais Alternativas - Naturopatia, Homeopatia -, Analista
+                                de
+                                perfil
+                                comportamental e Coaching Integral Sistêmica Internacional.
+                            </p>
+                            <p class="highlight-gold">
+                                Atua como palestrante Internacional em Inteligência Emocional, Empreendedorismo e
+                                espiritualidade, como
+                                Terapeuta Sistêmica, direciona trabalhos com grupos de mulheres vítimas de violação por
+                                abusos
+                                sexuais,
+                                agressões físicas e/ou psicológicas.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="quem-e--1__container--img">
-                    <img src="../assets/images/queme1fab-image-desktop.svg" alt="Imagem de Fabrícia Bitencourt">
-                </div>
-            </section>
-            <section class="quem-e--2">
+                    <div class="quem-e--1__container--img">
+                        <img src="../assets/images/queme1fab-image-desktop.svg" alt="Imagem de Fabrícia Bitencourt">
+                    </div>
+                </section>
+                <section class="quem-e--2">
 
-                <img src="../assets/images/queme2fab-image-mobile.svg" alt="Imagem de Fabrícia Bitencourt" />
+                    <img src="../assets/images/queme2fab-image-mobile.svg" alt="Imagem de Fabrícia Bitencourt" />
 
-                <div class="quem-e--2__content">
-                    <p>
-                        Na área empresarial, o sucesso e a experiência em gestão de finanças a conduziram a ser
-                        empreendedora e Diretora na área de logística, em sua empresa Transtac Transporte, atendendo em
-                        todo
-                        o
-                        Brasil, nos EUA e na Europa.
-                    </p>
+                    <div class="quem-e--2__content">
+                        <p>
+                            Na área empresarial, o sucesso e a experiência em gestão de finanças a conduziram a ser
+                            empreendedora e Diretora na área de logística, em sua empresa Transtac Transporte, atendendo
+                            em
+                            todo
+                            o
+                            Brasil, nos EUA e na Europa.
+                        </p>
 
-                    <div class="quem-e--2__content--desktop">
-                        <p class="highlight-gold">
+                        <div class="quem-e--2__content--desktop">
+                            <p class="highlight-gold">
+                                Fundadora e CEO do Institute For Life Fabrícia mentoreia mais de 3 mil mulheres
+                                empreendedoras e
+                                empresárias, trabalhando os traumas que as impedem de chegar ao estado desejado,
+                                potencializando
+                                suas
+                                habilidades a terem alta performance em suas atividades para que tenham independência
+                                financeira,
+                                posicionamento e autoridade emocional e espiritual resultando em um sucesso de uma vida
+                                com
+                                plenitude,
+                                resultando em um sucesso assertivo e mais lucrativo.
+                            </p>
+                            <p>
+                                Lançou livro solo sucesso de vendas <strong>"Ninguém vence no improviso"</strong>,
+                                também é
+                                coautora do livro
+                                <strong>"Princípios da empreendedora de sucesso"</strong>, participou no devocional
+                                <strong>"21 pílulas para mulheres"</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="quem-e--3">
+                    <div class="quem-e--3__content--1">
+                        <p>
                             Fundadora e CEO do Institute For Life Fabrícia mentoreia mais de 3 mil mulheres
                             empreendedoras e
                             empresárias, trabalhando os traumas que as impedem de chegar ao estado desejado,
@@ -1856,548 +177,334 @@
                             plenitude,
                             resultando em um sucesso assertivo e mais lucrativo.
                         </p>
+                    </div>
+                    <div class="quem-e--3__content--2 highlight-gold">
+                        <img src="../assets/images/queme3livro-image-mobile.svg" alt="Livro Fabrícia Bitencourt" />
                         <p>
-                            Lançou livro solo sucesso de vendas <strong>"Ninguém vence no improviso"</strong>, também é
-                            coautora do livro
-                            <strong>"Princípios da empreendedora de sucesso"</strong>, participou no devocional
-                            <strong>"21 pílulas para mulheres"</strong>.
+                            Lançou livro solo sucesso de vendas "Ninguém vence no improviso, também é coautora do livro
+                            "Princípios da empreendedora de sucesso", participou no devocional 21 pílulas para mulheres.
                         </p>
                     </div>
-                </div>
-            </section>
-            <section class="quem-e--3">
-                <div class="quem-e--3__content--1">
-                    <p>
-                        Fundadora e CEO do Institute For Life Fabrícia mentoreia mais de 3 mil mulheres empreendedoras e
-                        empresárias, trabalhando os traumas que as impedem de chegar ao estado desejado, potencializando
-                        suas
-                        habilidades a terem alta performance em suas atividades para que tenham independência
-                        financeira,
-                        posicionamento e autoridade emocional e espiritual resultando em um sucesso de uma vida com
-                        plenitude,
-                        resultando em um sucesso assertivo e mais lucrativo.
-                    </p>
-                </div>
-                <div class="quem-e--3__content--2 highlight-gold">
-                    <img src="../assets/images/queme3livro-image-mobile.svg" alt="Livro Fabrícia Bitencourt" />
-                    <p>
-                        Lançou livro solo sucesso de vendas "Ninguém vence no improviso, também é coautora do livro
-                        "Princípios da empreendedora de sucesso", participou no devocional 21 pílulas para mulheres.
-                    </p>
-                </div>
+                </section>
             </section>
         </section>
-    </section>
 
-    <section class="escritora">
-        <header class="escritora__header">
-            <img src="../assets/images/escritora-image-mobile.svg" alt="">
-        </header>
-        <section class="escritora__content">
-            <div class="escritora__block">
-                <h2 class="escritora__block--title">5 princípios da mulher empreendedora</h2>
-                <h3 class="escritora__block--subtitle">Co-autora</h3>
-                <p class="escritora__block--text">Quer descobrir os segredos por trás do sucesso de mulheres
-                    inspiradoras?
-                    Em <strong>"5 Princípios da Mulher de Sucesso"</strong>, você encontrará as ferramentas e a
-                    motivação
-                    para alcançar seus
-                    objetivos.<br><br>
-                    Uma leitura essencial para quem busca uma carreira de sucesso e uma vida mais realizada.</p>
-            </div>
-            <div class="escritora__block">
-                <h2 class="escritora__block--title">Ninguém vence no improviso</h2>
-                <h3 class="escritora__block--subtitle">Autora</h3>
-                <p class="escritora__block--text">Em <strong>"Ninguém Vence no Improviso"</strong>, uma jornada de
-                    autoconhecimento e
-                    transformação. Mostrar que a vida é como um palco onde improviso não sustenta o sucesso.
-                    <br><br> O livro oferece
-                    ferramentas poderosas para lidar com o inesperado, superar seus medos e abraçar novas oportunidades.
-                    <br>Descubra como transformar os desafios em oportunidades de crescimento e viva uma vida mais
-                    autêntica
-                    e plena."
-                </p>
-            </div>
-            <div class="escritora__block">
-                <h2 class="escritora__block--title">Pílulas diárias para a mulher de sucesso</h2>
-                <h3 class="escritora__block--subtitle">Co-autora - Livro devocional</h3>
-                <p class="escritora__block--text">Desperte a mulher poderosa que existe em você! Com "21 Pílulas Diárias
-                    para a Mulher de Sucesso", você
-                    receberá uma dose diária de inspiração e ferramentas práticas para alcançar seus objetivos.
-                    <br><br>Um
-                    devocional completo para te guiar em uma jornada de autoconhecimento e crescimento pessoal.
-                </p>
+        <section class="escritora">
+            <header class="escritora__header">
+                <img src="../assets/images/escritora-image-mobile.svg" alt="">
+            </header>
+            <section class="escritora__content">
+                <div class="escritora__block">
+                    <h2 class="escritora__block--title">5 princípios da mulher empreendedora</h2>
+                    <h3 class="escritora__block--subtitle">Co-autora</h3>
+                    <p class="escritora__block--text">Quer descobrir os segredos por trás do sucesso de mulheres
+                        inspiradoras?
+                        Em <strong>"5 Princípios da Mulher de Sucesso"</strong>, você encontrará as ferramentas e a
+                        motivação
+                        para alcançar seus
+                        objetivos.<br><br>
+                        Uma leitura essencial para quem busca uma carreira de sucesso e uma vida mais realizada.</p>
+                </div>
+                <div class="escritora__block">
+                    <h2 class="escritora__block--title">Ninguém vence no improviso</h2>
+                    <h3 class="escritora__block--subtitle">Autora</h3>
+                    <p class="escritora__block--text">Em <strong>"Ninguém Vence no Improviso"</strong>, uma jornada de
+                        autoconhecimento e
+                        transformação. Mostrar que a vida é como um palco onde improviso não sustenta o sucesso.
+                        <br><br> O livro oferece
+                        ferramentas poderosas para lidar com o inesperado, superar seus medos e abraçar novas
+                        oportunidades.
+                        <br>Descubra como transformar os desafios em oportunidades de crescimento e viva uma vida mais
+                        autêntica
+                        e plena."
+                    </p>
+                </div>
+                <div class="escritora__block">
+                    <h2 class="escritora__block--title">Pílulas diárias para a mulher de sucesso</h2>
+                    <h3 class="escritora__block--subtitle">Co-autora - Livro devocional</h3>
+                    <p class="escritora__block--text">Desperte a mulher poderosa que existe em você! Com "21 Pílulas
+                        Diárias
+                        para a Mulher de Sucesso", você
+                        receberá uma dose diária de inspiração e ferramentas práticas para alcançar seus objetivos.
+                        <br><br>Um
+                        devocional completo para te guiar em uma jornada de autoconhecimento e crescimento pessoal.
+                    </p>
+                </div>
+            </section>
+        </section>
+
+        <section class="seguidores">
+            <div class="seguidores__container">
+                <div class="seguidores__content">
+                    <h2 class="seguidores__title">40k</h2>
+                    <p class="seguidores__subtitle">Seguidores</p>
+                </div>
             </div>
         </section>
-    </section>
 
-    <section class="seguidores">
-        <div class="seguidores__container">
-            <div class="seguidores__content">
-                <h2 class="seguidores__title">40k</h2>
-                <p class="seguidores__subtitle">Seguidores</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="instagram">
-        <div class="instagram__content">
-            <h2 class="instagram__title">Instagram</h2>
-            <p class="instagram__profile">@fabriciambitencourt</p>
-            <div class="instagram__seguidores--block">
-                <p class="instagram__seguidores--text">+40k Seguidores</p>
-            </div>
-            <div class="instagram__graph">
-                <div class="instagram__graph--text">
-                    <h3>25,4%</h3>
-                    <p>Homens</p>
+        <section class="instagram">
+            <div class="instagram__content">
+                <h2 class="instagram__title">Instagram</h2>
+                <p class="instagram__profile">@fabriciambitencourt</p>
+                <div class="instagram__seguidores--block">
+                    <p class="instagram__seguidores--text">+40k Seguidores</p>
                 </div>
-                <img src="../assets/images/instagram-graph-image.svg" alt="Gráfico de Seguidores do Instagram">
-                <div class="instagram__graph--text">
-                    <h3>74,6%</h3>
-                    <p>Mulheres</p>
-                </div>
-            </div>
-            <div class="btn__clique-aqui">
-                <a href="https://www.instagram.com/fabriciambitencourt/" class="btn__clique-aqui--text">Clique Aqui</a>
-            </div>
-
-        </div>
-        <div class="instagram__img-container">
-            <img src="../assets/images/instagram-cel-image.svg" alt="Celular com Instagram">
-        </div>
-    </section>
-
-    <section class="tiktok">
-        <section class="rede">
-            <div class="rede__content">
-                <h2 class="rede__title">TikTok</h2>
-                <p class="rede__profile">@fabriciambitencourt</p>
-                <div class="btn__clique-aqui">
-                    <a href="https://www.tiktok.com/@fabriciambitencourt" class="btn__clique-aqui--text">Clique Aqui</a>
-                </div>
-            </div>
-            <div class="rede__img-container">
-                <img src="../assets/images/tiktok-image.svg" alt="Celular com tiktok">
-            </div>
-        </section>
-    </section>
-
-    <section class="facebook">
-        <section class="rede">
-            <div class="rede__content">
-                <h2 class="rede__title">Facebook</h2>
-                <p class="rede__profile">Fabricia M Bitencourt</p>
-                <div class="btn__clique-aqui">
-                    <a href="https://www.facebook.com/fabricia.bitencourt" class="btn__clique-aqui--text">Clique
-                        Aqui</a>
-                </div>
-            </div>
-            <div class="rede__img-container">
-                <img src="../assets/images/facebook-image.svg" alt="Celular com facebook">
-            </div>
-        </section>
-    </section>
-
-    <section class="linkedin">
-        <section class="rede">
-            <div class="rede__content">
-                <h2 class="rede__title">LinkedIn</h2>
-                <p class="rede__profile">Fabricia Bitencourt Schmitz</p>
-                <div class="btn__clique-aqui">
-                    <a href="https://www.linkedin.com/in/fabricia-bitencourt-schmitz-4392b621b/"
-                        class="btn__clique-aqui--text">Clique Aqui</a>
-                </div>
-            </div>
-            <div class="rede__img-container">
-                <img src="../assets/images/linkedin-image.svg" alt="Celular com linkedin">
-            </div>
-        </section>
-    </section>
-
-    <section class="conversa">
-        <div class="conversa__container">
-            <div class="conversa__header">
-                <h2 class="conversa__title">Com quem a Fabrícia</h2>
-                <div class="conversa__title--block">
-                    <p class="conversa__title2">Conversa?</p>
-                </div>
-            </div>
-            <div class="conversa__content">
-                <h2>Brasil:</h2>
-                <p>Santa Catarina, São Paulo, Rio Grande do Sul, Rio de Janeiro, Minas Gerais, Belo Horizonte, Goiás.
-                </p>
-            </div>
-            <div class="conversa__content">
-                <h2>Internacional:</h2>
-                <p>Londres, Orlando, Miami, Portugal, Dubai, Argentina, Itália.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="palestrante">
-        <div class="palestrante__container">
-            <div class="palestrante__title">
-                <h2>Palestrante</h2>
-                <h3>Internacional</h3>
-            </div>
-            <img src="../assets/images/palestrante-bandeiras.svg" alt="Bandeiras internacionais">
-        </div>
-    </section>
-
-    <section class="mentora">
-        <div class="mentora__content">
-            <h2 class="mentora__title--1">Mentora</h2>
-            <h3 class="mentora__title--2">Internacional</h2><br>
-                <div class="btn__clique-aqui">
-                    <a href="https://fabriciabitencourt.com.br/mentorias/" class="btn__clique-aqui--text">Clique
-                        Aqui</a>
-                </div>
-        </div>
-    </section>
-
-    <section class="premios">
-        <div class="premios__container">
-            <h2 class="premios__title">Premiações</h2>
-            <div class="premios__grid">
-                <div class="premios__grid--child" id="premios1"><img src="assets/images/premio--1.png" alt="Prêmio 1">
-                </div>
-                <div class="premios__grid--child" id="premios2"><img src="assets/images/premio--2.png" alt="Prêmio 2">
-                </div>
-                <div class="premios__grid--child" id="premios3"><img src="assets/images/premio--3.png" alt="Prêmio 3">
-                </div>
-                <div class="premios__grid--child" id="premios4"><img src="assets/images/premio--4.png" alt="Prêmio 4">
-                </div>
-                <div class="premios__grid--child" id="premios5"><img src="assets/images/premio--5.png" alt="Prêmio 5">
-                </div>
-                <div class="premios__grid--child" id="premios6"><img src="assets/images/premio--6.png" alt="Prêmio 6">
-                </div>
-            </div>
-            <p>@fabriciambitecourt</p>
-        </div>
-    </section>
-
-    <section class="networking">
-        <div class="networking__container">
-            <h2 class="networking__title">Networking da Fabrícia</h2>
-            <div class="networking__grid">
-                <article class="networking__grid--child"><img src="assets/images/networking--1.png" alt="Networking 1">
-                </article>
-                <article class="networking__grid--child"><img src="assets/images/networking--2.png" alt="Networking 2">
-                </article>
-                <article class="networking__grid--child"><img src="assets/images/networking--3.png" alt="Networking 3">
-                </article>
-                <article class="networking__grid--child"><img src="assets/images/networking--4.png" alt="Networking 4">
-                </article>
-                <article class="networking__grid--child"><img src="assets/images/networking--5.png" alt="Networking 5">
-                </article>
-                <article class="networking__grid--child"><img src="assets/images/networking--6.png" alt="Networking 6">
-                </article>
-                <article class="networking__grid--child"><img src="assets/images/networking--7.png" alt="Networking 7">
-                </article>
-                <article class="networking__grid--child"><img src="assets/images/networking--8.png" alt="Networking 8">
-                </article>
-                <article class="networking__grid--child"><img src="assets/images/networking--9.png" alt="Networking 9">
-                </article>
-                <article class="networking__grid--child"><img src="assets/images/networking--10.png"
-                        alt="Networking 10"></article>
-                <article class="networking__grid--child"><img src="assets/images/networking--11.png"
-                        alt="Networking 11"></article>
-                <article class="networking__grid--child"><img src="assets/images/networking--12.png"
-                        alt="Networking 12"></article>
-            </div>
-            <p>@fabriciambitecourt</p>
-        </div>
-    </section>
-
-    <section class="investimento">
-        <section class="investimento__container1">
-            <h2 class="investimento__container1--title">Inves</h2>
-            <h2 class="investimento__container1--title">timento:</h2>
-            <p class="investimento__container1--observacao">
-                *Orçamentos válidos por 15 dias, mediante aprovação do briefing completo da ação
-            </p>
-        </section>
-        <section class="investimento__container2">
-            <div>
-                <h2 class="investimento__container2--title">Investimento:</h2>
-            </div>
-
-            <div class="investimento__table-wrapper">
-                <div class="investimento__table">
-                    <div class="investimento__valores">
-                        <div class="investimento__box">
-                            <h3 class="investimento__box-title">Presença no local</h3>
-                            <div class="investimento__box-inner">
-                                <p>Presença + 1 Post + 3 Stories</p>
-                                <span class="investimento__preco">R$ 15mil</span>
-                            </div>
-                        </div>
-
-                        <div class="investimento__box">
-                            <h3 class="investimento__box-title">Presença VIP</h3>
-                            <div class="investimento__box-inner">
-                                <p>Presença + 2 Posts + 5 Stories</p>
-                                <span class="investimento__preco">R$ 25mil</span>
-                            </div>
-                        </div>
+                <div class="instagram__graph">
+                    <div class="instagram__graph--text">
+                        <h3>25,4%</h3>
+                        <p>Homens</p>
                     </div>
-                    <div class="investimento__pacotes">
-                        <h3 class="investimento__pacotes-title">Pacotes:</h3>
-                        <ul class="investimento__pacotes-list">
-                            <li>1 Story ................................... R$ 1.000</li>
-                            <li>1 Post .................................... R$ 1.500</li>
-                            <li>1 Reels .................................. R$ 1.500</li>
-                            <li>1 Reels + 1 Story ................ R$ 2.000</li>
-                            <li>1 Post + 3 Story ................... R$ 2.500</li>
-                            <li>2 Posts ................................. R$ 3.000</li>
-                            <li>2 Posts + 3 Story ................. R$ 4.000</li>
-                            <li>2 Posts + 5 Story ................. R$ 5.000</li>
-                            <li>3 Posts ................................ R$ 5.500</li>
-                        </ul>
+                    <img src="../assets/images/instagram-graph-image.svg" alt="Gráfico de Seguidores do Instagram">
+                    <div class="instagram__graph--text">
+                        <h3>74,6%</h3>
+                        <p>Mulheres</p>
                     </div>
                 </div>
-            </div>
-            <p class="investimento__arraste">Arraste para ver os pacotes</p>
+                <div class="btn__clique-aqui">
+                    <a href="https://www.instagram.com/fabriciambitencourt/" class="btn__clique-aqui--text">Clique
+                        Aqui</a>
+                </div>
 
-            <div>
-                <p class="investimento__container2--observacao">*Orçamentos válidos por 15 dias, mediante aprovação do
-                    briefing completo da ação</p>
+            </div>
+            <div class="instagram__img-container">
+                <img src="../assets/images/instagram-cel-image.svg" alt="Celular com Instagram">
             </div>
         </section>
-    </section>
 
-    <section class="mais-info">
-        <div class="mais-info__container">
-            <img src="../assets/images/mais-info-logo.png" alt="Logo Fabrícia Bitecourt">
-            <div class="mais-info__content">
-                <h2 class="mais-info__title">Para mais informações</h2>
-                <ul class="mais-info__list">
-                    <li id="mais-info1">48 98812-7282 </li>
-                    <li id="mais-info2">@fabriciambitencourt </li>
-                    <li id="mais-info3">comercial@fabriciabitencourt.com.br</li>
-                    <li id="mais-info4">Fabricia Bitencourt Schmitz</li>
-                    <li id="mais-info5">Fabricia M Bitencourt</li>
-                    <li id="mais-info6">@fabriciambitencourt</li>
-                </ul>
+        <section class="tiktok">
+            <section class="rede">
+                <div class="rede__content">
+                    <h2 class="rede__title">TikTok</h2>
+                    <p class="rede__profile">@fabriciambitencourt</p>
+                    <div class="btn__clique-aqui">
+                        <a href="https://www.tiktok.com/@fabriciambitencourt" class="btn__clique-aqui--text">Clique
+                            Aqui</a>
+                    </div>
+                </div>
+                <div class="rede__img-container">
+                    <img src="../assets/images/tiktok-image.svg" alt="Celular com tiktok">
+                </div>
+            </section>
+        </section>
+
+        <section class="facebook">
+            <section class="rede">
+                <div class="rede__content">
+                    <h2 class="rede__title">Facebook</h2>
+                    <p class="rede__profile">Fabricia M Bitencourt</p>
+                    <div class="btn__clique-aqui">
+                        <a href="https://www.facebook.com/fabricia.bitencourt" class="btn__clique-aqui--text">Clique
+                            Aqui</a>
+                    </div>
+                </div>
+                <div class="rede__img-container">
+                    <img src="../assets/images/facebook-image.svg" alt="Celular com facebook">
+                </div>
+            </section>
+        </section>
+
+        <section class="linkedin">
+            <section class="rede">
+                <div class="rede__content">
+                    <h2 class="rede__title">LinkedIn</h2>
+                    <p class="rede__profile">Fabricia Bitencourt Schmitz</p>
+                    <div class="btn__clique-aqui">
+                        <a href="https://www.linkedin.com/in/fabricia-bitencourt-schmitz-4392b621b/"
+                            class="btn__clique-aqui--text">Clique Aqui</a>
+                    </div>
+                </div>
+                <div class="rede__img-container">
+                    <img src="../assets/images/linkedin-image.svg" alt="Celular com linkedin">
+                </div>
+            </section>
+        </section>
+
+        <section class="conversa">
+            <div class="conversa__container">
+                <div class="conversa__header">
+                    <h2 class="conversa__title">Com quem a Fabrícia</h2>
+                    <div class="conversa__title--block">
+                        <p class="conversa__title2">Conversa?</p>
+                    </div>
+                </div>
+                <div class="conversa__content">
+                    <h2>Brasil:</h2>
+                    <p>Santa Catarina, São Paulo, Rio Grande do Sul, Rio de Janeiro, Minas Gerais, Belo Horizonte,
+                        Goiás.
+                    </p>
+                </div>
+                <div class="conversa__content">
+                    <h2>Internacional:</h2>
+                    <p>Londres, Orlando, Miami, Portugal, Dubai, Argentina, Itália.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!--
-    <div id="hero-placeholder"></div>
-    <div id="frase-impacto-placeholder"></div>
-    <div id="ola-placeholder"></div>
-    <div id="quem-e-placeholder"></div>
-    <div id="escritora-placeholder"></div>
-    <div id="seguidores-placeholder"></div>
-    <div id="instagram-placeholder"></div>
-    <div id="tiktok-placeholder"></div>
-    <div id="facebook-placeholder"></div>
-    <div id="linkedin-placeholder"></div>
-    <div id="conversa-placeholder"></div>
-    <div id="palestrante-placeholder"></div>
-    <div id="mentora-placeholder"></div>
-    <div id="premios-placeholder"></div>
-    <div id="networking-placeholder"></div>
-    <div id="investimento-placeholder"></div>
-    <div id="mais-info-placeholder"></div>
+        <section class="palestrante">
+            <div class="palestrante__container">
+                <div class="palestrante__title">
+                    <h2>Palestrante</h2>
+                    <h3>Internacional</h3>
+                </div>
+                <img src="../assets/images/palestrante-bandeiras.svg" alt="Bandeiras internacionais">
+            </div>
+        </section>
 
-    <script>
-        fetch('sections/hero.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar hero.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('hero-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
+        <section class="mentora">
+            <div class="mentora__content">
+                <h2 class="mentora__title--1">Mentora</h2>
+                <h3 class="mentora__title--2">Internacional</h2><br>
+                    <div class="btn__clique-aqui">
+                        <a href="https://fabriciabitencourt.com.br/mentorias/" class="btn__clique-aqui--text">Clique
+                            Aqui</a>
+                    </div>
+            </div>
+        </section>
 
-        fetch('sections/frase-impacto.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar frase-impacto.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('frase-impacto-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
+        <section class="premios">
+            <div class="premios__container">
+                <h2 class="premios__title">Premiações</h2>
+                <div class="premios__grid">
+                    <div class="premios__grid--child" id="premios1"><img src="assets/images/premio--1.png"
+                            alt="Prêmio 1">
+                    </div>
+                    <div class="premios__grid--child" id="premios2"><img src="assets/images/premio--2.png"
+                            alt="Prêmio 2">
+                    </div>
+                    <div class="premios__grid--child" id="premios3"><img src="assets/images/premio--3.png"
+                            alt="Prêmio 3">
+                    </div>
+                    <div class="premios__grid--child" id="premios4"><img src="assets/images/premio--4.png"
+                            alt="Prêmio 4">
+                    </div>
+                    <div class="premios__grid--child" id="premios5"><img src="assets/images/premio--5.png"
+                            alt="Prêmio 5">
+                    </div>
+                    <div class="premios__grid--child" id="premios6"><img src="assets/images/premio--6.png"
+                            alt="Prêmio 6">
+                    </div>
+                </div>
+                <p>@fabriciambitecourt</p>
+            </div>
+        </section>
 
-        fetch('sections/ola.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar ola.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('ola-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
+        <section class="networking">
+            <div class="networking__container">
+                <h2 class="networking__title">Networking da Fabrícia</h2>
+                <div class="networking__grid">
+                    <article class="networking__grid--child"><img src="assets/images/networking--1.png"
+                            alt="Networking 1">
+                    </article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--2.png"
+                            alt="Networking 2">
+                    </article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--3.png"
+                            alt="Networking 3">
+                    </article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--4.png"
+                            alt="Networking 4">
+                    </article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--5.png"
+                            alt="Networking 5">
+                    </article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--6.png"
+                            alt="Networking 6">
+                    </article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--7.png"
+                            alt="Networking 7">
+                    </article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--8.png"
+                            alt="Networking 8">
+                    </article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--9.png"
+                            alt="Networking 9">
+                    </article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--10.png"
+                            alt="Networking 10"></article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--11.png"
+                            alt="Networking 11"></article>
+                    <article class="networking__grid--child"><img src="assets/images/networking--12.png"
+                            alt="Networking 12"></article>
+                </div>
+                <p>@fabriciambitecourt</p>
+            </div>
+        </section>
 
-        fetch('sections/quem-e.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar quem-e.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('quem-e-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
+        <section class="investimento">
+            <section class="investimento__container1">
+                <h2 class="investimento__container1--title">Inves</h2>
+                <h2 class="investimento__container1--title">timento:</h2>
+                <p class="investimento__container1--observacao">
+                    *Orçamentos válidos por 15 dias, mediante aprovação do briefing completo da ação
+                </p>
+            </section>
+            <section class="investimento__container2">
+                <div>
+                    <h2 class="investimento__container2--title">Investimento:</h2>
+                </div>
 
-        fetch('sections/escritora.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar escritora.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('escritora-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/seguidores.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar seguidores.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('seguidores-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/instagram.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar instagram.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('instagram-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/tiktok.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar tiktok.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('tiktok-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/facebook.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar facebook.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('facebook-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/linkedin.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar linkedin.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('linkedin-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/conversa.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar conversa.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('conversa-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/palestrante.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar palestrante.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('palestrante-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/mentora.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar mentora.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('mentora-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/premios.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar premios.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('premios-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/networking.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar networking.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('networking-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/investimento.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar investimento.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('investimento-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-        fetch('sections/mais-info.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar mais-info.html");
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('mais-info-placeholder').innerHTML = data;
-            })
-            .catch(err => console.error("Erro no fetch:", err));
-    </script>
-    -->
+                <div class="investimento__table-wrapper">
+                    <div class="investimento__table">
+                        <div class="investimento__valores">
+                            <div class="investimento__box">
+                                <h3 class="investimento__box-title">Presença no local</h3>
+                                <div class="investimento__box-inner">
+                                    <p>Presença + 1 Post + 3 Stories</p>
+                                    <span class="investimento__preco">R$ 15mil</span>
+                                </div>
+                            </div>
 
+                            <div class="investimento__box">
+                                <h3 class="investimento__box-title">Presença VIP</h3>
+                                <div class="investimento__box-inner">
+                                    <p>Presença + 2 Posts + 5 Stories</p>
+                                    <span class="investimento__preco">R$ 25mil</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="investimento__pacotes">
+                            <h3 class="investimento__pacotes-title">Pacotes:</h3>
+                            <ul class="investimento__pacotes-list">
+                                <li>1 Story ................................... R$ 1.000</li>
+                                <li>1 Post .................................... R$ 1.500</li>
+                                <li>1 Reels .................................. R$ 1.500</li>
+                                <li>1 Reels + 1 Story ................ R$ 2.000</li>
+                                <li>1 Post + 3 Story ................... R$ 2.500</li>
+                                <li>2 Posts ................................. R$ 3.000</li>
+                                <li>2 Posts + 3 Story ................. R$ 4.000</li>
+                                <li>2 Posts + 5 Story ................. R$ 5.000</li>
+                                <li>3 Posts ................................ R$ 5.500</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="investimento__arraste">Arraste para ver os pacotes</p>
+
+                <div>
+                    <p class="investimento__container2--observacao">*Orçamentos válidos por 15 dias, mediante aprovação
+                        do
+                        briefing completo da ação</p>
+                </div>
+            </section>
+        </section>
+
+        <section class="mais-info">
+            <div class="mais-info__container">
+                <img src="../assets/images/mais-info-logo.png" alt="Logo Fabrícia Bitecourt">
+                <div class="mais-info__content">
+                    <h2 class="mais-info__title">Para mais informações</h2>
+                    <ul class="mais-info__list">
+                        <li id="mais-info1">48 98812-7282 </li>
+                        <li id="mais-info2">@fabriciambitencourt </li>
+                        <li id="mais-info3">comercial@fabriciabitencourt.com.br</li>
+                        <li id="mais-info4">Fabricia Bitencourt Schmitz</li>
+                        <li id="mais-info5">Fabricia M Bitencourt</li>
+                        <li id="mais-info6">@fabriciambitencourt</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
 
 </body>
 
