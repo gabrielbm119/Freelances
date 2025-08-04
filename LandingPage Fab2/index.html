@@ -966,11 +966,11 @@
             background-size: cover;
             background-position: center;
 
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 1 / 1.20;
 
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
 
             color: var(--color-white);
             position: relative;
@@ -992,7 +992,7 @@
         .palestrante__container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
             gap: var(--spacing-sm);
             max-width: 100%;
@@ -1000,16 +1000,19 @@
 
         .palestrante__title h2 {
             font-family: var(--font-title);
-            font-size: clamp(7rem, 20vw, 21rem);
+            font-size: clamp(4rem, 12vw, 15rem);
             line-height: 0.8;
+            text-align: center;
         }
 
         .palestrante__title h3 {
             font-family: var(--font-title);
             font-size: clamp(3rem, 10vw, 9rem);
+            text-align: center;
         }
 
         .palestrante__container img {
+            display: none;
             width: 70%;
             height: auto;
         }
@@ -1023,15 +1026,22 @@
             }
 
             .palestrante__container {
+                align-items: flex-start;
                 max-width: 60%;
             }
 
             .palestrante__title h2 {
-                font-size: clamp(9rem, 10vw, 12rem);
+                font-size: clamp(7rem, 8vw, 9rem);
+                text-align: left;
             }
 
             .palestrante__title h3 {
                 font-size: clamp(4rem, 5vw, 6rem);
+                text-align: left;
+            }
+
+            .palestrante__container img {
+                display: block;
             }
         }
 
@@ -1152,7 +1162,7 @@
         .networking__grid {
             display: grid;
             grid-template-columns: repeat(2, 150px);
-            grid-template-rows: repeat(6, 250px);
+            grid-template-rows: repeat(6, 300px);
             align-content: center;
             justify-content: center;
             gap: 20px 15px;
@@ -1162,6 +1172,15 @@
             background-color: #5a5858;
             border: 1px solid var(--color-gold);
             border-radius: var(--spacing-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .networking__grid--child img {
+            max-width: auto;
+            height: 100%;
+            display: block;
+            object-fit: cover;
         }
 
         .networking__container p {
@@ -1171,21 +1190,21 @@
         @media (min-width: 600px) {
             .networking__grid {
                 grid-template-columns: repeat(3, 150px);
-                grid-template-rows: repeat(4, 250px);
+                grid-template-rows: repeat(4, 300px);
             }
         }
 
         @media (min-width: 768px) {
             .networking__grid {
                 grid-template-columns: repeat(4, 150px);
-                grid-template-rows: repeat(3, 250px);
+                grid-template-rows: repeat(3, 300px);
             }
         }
 
         @media (min-width: 1024px) {
             .networking__grid {
                 grid-template-columns: repeat(6, 150px);
-                grid-template-rows: repeat(2, 250px);
+                grid-template-rows: repeat(2, 300px);
             }
         }
 
@@ -1228,7 +1247,7 @@
         .premios__grid {
             display: grid;
             grid-template-columns: repeat(2, 150px);
-            grid-template-rows: repeat(6, 125px);
+            grid-template-rows: repeat(6, 150px);
             grid-column-gap: 20px;
             grid-row-gap: 15px;
         }
@@ -1237,6 +1256,15 @@
             background-color: #5a5858;
             border: 1px solid var(--color-gold);
             border-radius: var(--spacing-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .premios__grid--child img {
+            max-width: auto;
+            height: 100%;
+            display: block;
+            object-fit: cover;
         }
 
         #premios1 {
@@ -1270,7 +1298,7 @@
         @media (min-width: 600px) {
             .premios__grid {
                 grid-template-columns: repeat(3, 150px);
-                grid-template-rows: repeat(4, 125px);
+                grid-template-rows: repeat(4, 150px);
             }
 
             #premios3 {
@@ -1293,7 +1321,7 @@
         @media (min-width: 1024px) {
             .premios__grid {
                 grid-template-columns: repeat(6, 150px);
-                grid-template-rows: repeat(2, 125px);
+                grid-template-rows: repeat(2, 150px);
             }
 
             #premios3 {
@@ -2010,8 +2038,7 @@
     <section class="palestrante">
         <div class="palestrante__container">
             <div class="palestrante__title">
-                <h2>Pales</h2>
-                <h2>trante</h2>
+                <h2>Palestrante</h2>
                 <h3>Internacional</h3>
             </div>
             <img src="../assets/images/palestrante-bandeiras.svg" alt="Bandeiras internacionais">
@@ -2033,12 +2060,18 @@
         <div class="premios__container">
             <h2 class="premios__title">Premiações</h2>
             <div class="premios__grid">
-                <div class="premios__grid--child" id="premios1">1</div>
-                <div class="premios__grid--child" id="premios2">2</div>
-                <div class="premios__grid--child" id="premios3">3</div>
-                <div class="premios__grid--child" id="premios4">4</div>
-                <div class="premios__grid--child" id="premios5">5</div>
-                <div class="premios__grid--child" id="premios6">6</div>
+                <div class="premios__grid--child" id="premios1"><img src="assets/images/premio--1.png" alt="Prêmio 1">
+                </div>
+                <div class="premios__grid--child" id="premios2"><img src="assets/images/premio--2.png" alt="Prêmio 2">
+                </div>
+                <div class="premios__grid--child" id="premios3"><img src="assets/images/premio--3.png" alt="Prêmio 3">
+                </div>
+                <div class="premios__grid--child" id="premios4"><img src="assets/images/premio--4.png" alt="Prêmio 4">
+                </div>
+                <div class="premios__grid--child" id="premios5"><img src="assets/images/premio--5.png" alt="Prêmio 5">
+                </div>
+                <div class="premios__grid--child" id="premios6"><img src="assets/images/premio--6.png" alt="Prêmio 6">
+                </div>
             </div>
             <p>@fabriciambitecourt</p>
         </div>
@@ -2048,18 +2081,30 @@
         <div class="networking__container">
             <h2 class="networking__title">Networking da Fabrícia</h2>
             <div class="networking__grid">
-                <article class="networking__grid--child">1</article>
-                <article class="networking__grid--child">2</article>
-                <article class="networking__grid--child">3</article>
-                <article class="networking__grid--child">4</article>
-                <article class="networking__grid--child">5</article>
-                <article class="networking__grid--child">6</article>
-                <article class="networking__grid--child">7</article>
-                <article class="networking__grid--child">8</article>
-                <article class="networking__grid--child">9</article>
-                <article class="networking__grid--child">10</article>
-                <article class="networking__grid--child">11</article>
-                <article class="networking__grid--child">12s</article>
+                <article class="networking__grid--child"><img src="assets/images/networking--1.png" alt="Networking 1">
+                </article>
+                <article class="networking__grid--child"><img src="assets/images/networking--2.png" alt="Networking 2">
+                </article>
+                <article class="networking__grid--child"><img src="assets/images/networking--3.png" alt="Networking 3">
+                </article>
+                <article class="networking__grid--child"><img src="assets/images/networking--4.png" alt="Networking 4">
+                </article>
+                <article class="networking__grid--child"><img src="assets/images/networking--5.png" alt="Networking 5">
+                </article>
+                <article class="networking__grid--child"><img src="assets/images/networking--6.png" alt="Networking 6">
+                </article>
+                <article class="networking__grid--child"><img src="assets/images/networking--7.png" alt="Networking 7">
+                </article>
+                <article class="networking__grid--child"><img src="assets/images/networking--8.png" alt="Networking 8">
+                </article>
+                <article class="networking__grid--child"><img src="assets/images/networking--9.png" alt="Networking 9">
+                </article>
+                <article class="networking__grid--child"><img src="assets/images/networking--10.png"
+                        alt="Networking 10"></article>
+                <article class="networking__grid--child"><img src="assets/images/networking--11.png"
+                        alt="Networking 11"></article>
+                <article class="networking__grid--child"><img src="assets/images/networking--12.png"
+                        alt="Networking 12"></article>
             </div>
             <p>@fabriciambitecourt</p>
         </div>
