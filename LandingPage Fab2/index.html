@@ -25,6 +25,7 @@
     <div id="mentora-placeholder"></div>
     <div id="premios-placeholder"></div>
     <div id="networking-placeholder"></div>
+    <div id="investimento-placeholder"></div>
     <div id="mais-info-placeholder"></div>
 
     <script>
@@ -195,6 +196,17 @@
             })
             .then(data => {
                 document.getElementById('networking-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+        fetch('sections/investimento.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar investimento.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('investimento-placeholder').innerHTML = data;
             })
             .catch(err => console.error("Erro no fetch:", err));
         fetch('sections/mais-info.html')
