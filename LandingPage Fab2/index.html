@@ -22,6 +22,10 @@
     <div id="linkedin-placeholder"></div>
     <div id="conversa-placeholder"></div>
     <div id="palestrante-placeholder"></div>
+    <div id="mentora-placeholder"></div>
+    <div id="premios-placeholder"></div>
+    <div id="networking-placeholder"></div>
+    <div id="mais-info-placeholder"></div>
 
     <script>
         fetch('sections/hero.html')
@@ -159,7 +163,51 @@
             .then(data => {
                 document.getElementById('palestrante-placeholder').innerHTML = data;
             })
-            .catch(err => console.error("Erro no fetch:", err));    
+            .catch(err => console.error("Erro no fetch:", err));
+        fetch('sections/mentora.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar mentora.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('mentora-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+        fetch('sections/premios.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar premios.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('premios-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+        fetch('sections/networking.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar networking.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('networking-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
+        fetch('sections/mais-info.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar mais-info.html");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('mais-info-placeholder').innerHTML = data;
+            })
+            .catch(err => console.error("Erro no fetch:", err));
     </script>
 
 </body>
